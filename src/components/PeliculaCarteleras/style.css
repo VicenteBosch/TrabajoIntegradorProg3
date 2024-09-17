@@ -1,0 +1,40 @@
+.character-grid {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    align-items: flex-start; 
+}
+
+
+.character-card {
+    width: 23%; 
+    margin-bottom: 20px; 
+    background-color: white;
+}
+
+.character-card img {
+    width: 100%;
+    height: auto;
+  
+}
+
+.character-card h4 {
+    font-size: 25px;
+    margin: 10px ;
+    text-align: left;
+
+}
+
+.character-card p {
+    font-size: 15px;
+    color: #666;
+    padding: 0 10px;
+    text-align: left;
+}
+.character-card a {
+    
+    margin: 10px ;
+    color: #007bff;
+
+}
+
