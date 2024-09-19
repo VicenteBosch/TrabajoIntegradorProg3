@@ -1,5 +1,5 @@
 import React from "react";
-import Opcion from "../Opcion/index";
+import Opcion from "../Opcion";
 import './style.css'
 
 
@@ -10,28 +10,26 @@ const opciones = [
     }, 
     {
         nombre: "Favoritos",
-        ruta: "/favoritos"
+        ruta: "/Favoritos"
     },
     {
         nombre: "Populares",
-        ruta:"/populares"
+        ruta:"/Populares"
     },
     {
         nombre: "Estrenos",
-        ruta:"/estrenos"
+        ruta:"/Estrenos"
     }
 ]
 
-function Header(){
+function Header(props){
     return(
         <nav>
             
             <img className= "logo" src="/imgs/logo.png" alt="logo"/> 
 
             <ul className="main-nav">
-                {
-                opciones.map((elemento)=> <Opcion data= {elemento}/>)
-                }
+                {opciones.map((elemento)=> <Opcion data= {elemento}/>)}
             </ul>
             
         </nav>
