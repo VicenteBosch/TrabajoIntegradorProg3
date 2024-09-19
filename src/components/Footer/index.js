@@ -5,7 +5,7 @@ function Footer() {
     return(
 
         <footer>
-        <p>Copyright © Dashboard 2022</p>
+        <p>Tomas Ricci Brochiero & Vicente Bosch</p>
     </footer>
     )
 }
