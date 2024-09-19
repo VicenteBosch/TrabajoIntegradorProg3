@@ -25,14 +25,17 @@ const opciones = [
 function Header(props){
     return(
         <nav>
-        <img className= "logo" src="/imgs/logoPagina.png" alt="logo"/> 
-        <ul className="main-nav">
-            {opciones.map((elemento)=> <Opcion data= {elemento}/>)}
-        </ul>
-    </nav>
+            
+            <img className= "logo" src="/imgs/logo.png" alt="logo"/> 
+
+            <ul className="main-nav">
+                {opciones.map((elemento)=> <Opcion data= {elemento}/>)}
+            </ul>
+            
+        </nav>
     )
 }
 
 
 
-export default Header
+export default Header;
