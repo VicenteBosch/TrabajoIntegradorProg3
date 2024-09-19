@@ -1,31 +1,38 @@
 import React from "react";
-import "./style.css"
-import Opcion from "../Opcion/Opcion"
+import Opcion from "../Opcion";
+import './style.css'
 
-function Navbar(props) {
 
-    const opciones = ["ADMIN", "Pages", "Charts", "Tables"]; 
-    
-    
-    return (
+const opciones = [
+    {
+        nombre:"Home",
+        ruta: '/'
+    }, 
+    {
+        nombre: "Favoritos",
+        ruta: "/Favoritos"
+    },
+    {
+        nombre: "Populares",
+        ruta:"/Populares"
+    },
+    {
+        nombre: "Estrenos",
+        ruta:"/Estrenos"
+    }
+]
 
-    
+function Header(props){
+    return(
         <nav>
-            <ul className="main-nav">
-
-                  {opciones.map( (elm) => <Opcion name={elm} />)}
-                
-            </ul>
-            <ul className="user">
-                
-            <li>Vicente Bosch <img src="./imgs/user.jpg" alt=""/></li>
-            </ul>
-
-        </nav>
-
-
-
+        <img className= "logo" src="/imgs/logoPagina.png" alt="logo"/> 
+        <ul className="main-nav">
+            {opciones.map((elemento)=> <Opcion data= {elemento}/>)}
+        </ul>
+    </nav>
     )
 }
 
-export default Navbar
+
+
+export default Header

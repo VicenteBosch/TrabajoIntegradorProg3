@@ -1,44 +1,30 @@
-nav{
+nav {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     justify-content: space-between;
-    padding: 0 20px;
-    background-color: #4e73df;
-    color: #fff
-}
-
-nav ul {
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
     align-items: center;
+    background-color: #ded4d4;
+    padding: 1rem;
 }
 
-.main-nav li,
-.user li {
-    margin: 0 10px;
+/* Estilos para la imagen del logo */
+.logo {
+    width: 120px;
+    height: auto;
+}
+
+/* Estilos para el contenedor del menú */
+.main-nav {
+
     display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
-    align-items: center;
+    margin: 0;
+    padding: 0;
 }
 
-.main-nav li:first-child {
-    font-weight: bold;
+
+.main-nav li {
+    margin-left: 20px;
 }
 
-.user img {
-    width: 30px;
-    border-radius: 90%;
-    margin-left: 10px;
-}
 
-h1,h2 {
-    font-weight: 400;
-}
 
-h1,
-main {
-    padding: 0 30px;
-}
+
