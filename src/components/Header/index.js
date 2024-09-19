@@ -10,15 +10,15 @@ const opciones = [
     }, 
     {
         nombre: "Favoritos",
-        ruta: "/Favoritos"
+        ruta: "/favoritos"
     },
     {
         nombre: "Populares",
-        ruta:"/Populares"
+        ruta:"/populares"
     },
     {
         nombre: "Estrenos",
-        ruta:"/Estrenos"
+        ruta:"/estrenos"
     }
 ]
 
