@@ -19,7 +19,12 @@ function App() {
 
       <Header />
 
-  
+      <Switch>
+      <Route path="/" exact={true} component={Home}/>
+      <Route path="/favoritos"  component={Favoritos}/>
+      <Route path="/populares"  component={Populares}/>
+      <Route path="/estrenos"  component={Estrenos}/>
+      </Switch>
 
       <Footer />
     </>
