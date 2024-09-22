@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom';
 function Opcion (props) {
   return (
     <li>
-      <Link to={props.data.ruta}>
+      <Link to = {props.data.ruta}>
         {props.data.nombre}
       </Link>
     </li>

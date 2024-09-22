@@ -1,18 +1,23 @@
 import React from "react";
 
+import Populares from "../components/Populares/index"
 
+import Estrenos from "../components/Estrenos/index"
 
 function Home (){
     return(
 
-    <React.Fragment>
 
         <main>
-      
+            <h2>Películas más populares</h2>
+            <Populares/>
+            <p>Películas en cartel</p>
+            <Estrenos/>
+            
 
         </main>
        
-    </React.Fragment>
+    
     )
 }
 
