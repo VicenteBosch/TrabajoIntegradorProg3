@@ -9,6 +9,7 @@ import Home from './screens/Home';
 import Populares from './screens/Populares';
 import Estrenos from './screens/Estrenos';
 import Favoritos from './screens/Favoritos';
+import Detalles from './screens/Detalles';
 
 function App() {
  

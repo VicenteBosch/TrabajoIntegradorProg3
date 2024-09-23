@@ -11,7 +11,7 @@ function Home (){
         <main>
             <h2>Películas más populares</h2>
             <Populares/>
-            <p>Películas en cartel</p>
+            <h2>Películas en cartel</h2>
             <Estrenos/>
             
 
