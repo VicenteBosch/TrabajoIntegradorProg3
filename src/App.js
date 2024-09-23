@@ -10,6 +10,7 @@ import Populares from './screens/Populares';
 import Estrenos from './screens/Estrenos';
 import Favoritos from './screens/Favoritos';
 import Detalles from './screens/Detalles';
+import ResultadosBusqueda from "./screens/ResultadosBusqueda"
 
 function App() {
  
@@ -25,6 +26,7 @@ function App() {
           <Route path="/populares"  component={Populares}/>
           <Route path="/estrenos"  component={Estrenos}/>
           <Route path="/detalles/id/:id" component={Detalles}/>
+          <Route path="/results"  component={ResultadosBusqueda}/>
         </Switch>
 
         <Footer />

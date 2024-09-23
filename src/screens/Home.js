@@ -15,7 +15,7 @@ class Home extends Component {
 
     render () {
         return (
-
+            <React.Fragment>
             <div className="PadreHome">
                 <Buscador className="BuscadorHome" history={this.props.history}/>
                 <div className="PadreSecciones">
@@ -25,6 +25,8 @@ class Home extends Component {
                 <Estrenos />
                 </div>
             </div>
+            
+            </React.Fragment>
         )
     }
 }

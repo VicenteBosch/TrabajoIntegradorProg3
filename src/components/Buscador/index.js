@@ -7,18 +7,20 @@ class Buscador extends Component {
         this.state = {
           valorInput: "",
           peliculas: [],
+          
         };
       }
 
       detenerDefault(evento) {
         evento.preventDefault();
-        this.props.history.push('/busqueda/'+this.state.valorInput)
+        this.props.history.push('/results' , {valorInput: this.state.valorInput})
       }
     
       guardarInput(evento) {
         this.setState(
           {
             valorInput: evento.target.value,
+            
           }
         );
       }
@@ -34,7 +36,11 @@ class Buscador extends Component {
               onChange={(evento) => this.guardarInput(evento)}
               value={this.state.valorInput}
               placeholder="Buscar..."
+
+              
             />
+            <button>Buscar</button>
+       
             <i class="fas fa-search search-icon"></i>
           
           </form>

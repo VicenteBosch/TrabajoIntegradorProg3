@@ -35,6 +35,7 @@ class Movie extends Component {
         <p></p>}
 
         <h5 className="detalle-link"> <Link to ={`/detalle/pelicula/${this.props.data.id}`}>Ir a detalle</Link></h5>
+        
         </article>
 
         
