@@ -1,7 +1,6 @@
 import React, {Component} from "react";
 
 import Populares from "../components/Populares/index"
-import Header from "../components/Header/index"
 import Estrenos from "../components/Estrenos/index"
 import Buscador from "../components/Buscador/index"
 
@@ -20,9 +19,9 @@ class Home extends Component {
             <div className="PadreHome">
                 <Buscador className="BuscadorHome" history={this.props.history}/>
                 <div className="PadreSecciones">
-                <h2>Populares</h2>
+                <h2 className="populares">Populares</h2>
                 <Populares />
-                <h2>Estrenos</h2>
+                <h2 className="estrenos">Estrenos</h2>
                 <Estrenos />
                 </div>
             </div>

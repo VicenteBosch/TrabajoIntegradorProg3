@@ -1,5 +1,4 @@
 import React, {Component} from "react"
-import { Link } from 'react-router-dom'
 import "./style.css"
 
 class Buscador extends Component {
@@ -38,7 +37,6 @@ class Buscador extends Component {
             />
             <i class="fas fa-search search-icon"></i>
           
-            {console.log(this.state.valorInput)}
           </form>
           </div>
         );

@@ -24,18 +24,23 @@ class Movie extends Component {
         return(
 
         <article className='card-pelicula'>
-    <img className="cardimg" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}/images`} alt={this.props.data.title}></img>
-    <h2>{this.props.data.original_title}</h2>
-    {this.state.VerMas === 0 ?
-        <button onClick={() => this.VerDescripcion()}>Ver descripción</button> :
-        <button onClick={() => this.OcultarDescripcion()}>Ocultar descripción</button>}
-    {this.state.VerMas === 1 ?
+        <img className="cardimg" src={`https://image.tmdb.org/t/p/w500/${this.props.data.poster_path}/images`} alt={this.props.data.title}></img>
+        <h2>{this.props.data.original_title}</h2>
+
+        {this.state.VerMas === 0 ?
+            <button onClick={() => this.VerDescripcion()}>Ver descripción</button> :
+            <button onClick={() => this.OcultarDescripcion()}>Ocultar descripción</button>}
+        {this.state.VerMas === 1 ?
         <p>{this.props.data.overview}</p> :
         <p></p>}
-         <h5 className="detalle-link"> <Link to ={`/detalle/pelicula/${this.props.data.id}`}>Ir a detalle</Link></h5>
-</article>
+
+        <h5 className="detalle-link"> <Link to ={`/detalle/pelicula/${this.props.data.id}`}>Ir a detalle</Link></h5>
+        </article>
+
+        
+
         )
-        }
+    }
 
 }
 
