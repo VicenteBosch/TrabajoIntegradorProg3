@@ -1,0 +1,55 @@
+.PadreDetallePelicula {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.DetallePoster {
+    text-align: center;
+    color: grey;
+}
+
+.DetallePoster img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.DetalleInfo {
+    background-color: #f9f9f9;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.1);
+    width: 80%;
+    max-width: 600px;
+    text-align: left;
+}
+
+.DetalleInfo p {
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+.Generos {
+    margin-top: 10px;
+}
+
+.Generos p {
+    display: inline;
+    margin-right: 10px;
+}
+
+
+
+button {
+    padding: 8px 16px;
+    background-color: grey;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 10px;
+}

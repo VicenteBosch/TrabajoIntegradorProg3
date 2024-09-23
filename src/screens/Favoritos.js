@@ -1,11 +1,22 @@
-import React, { Component } from "react";
+import React from 'react';
+import { Component} from 'react';
+
 
 class Favoritos extends Component {
-    constructor(props) {
+    constructor (props){
         super(props);
-        this.state = {favoritos: localStorage.getItem('favoritos'),peliculas:[]}
+        this.state = { 
+
+        }
+    }
+    
+    render(){
+        return(
+            <div>
+         <h2>Favoritos</h2>
+            </div>
+        )
     }
 }
 
-
-export default Favoritos;
+export default Favoritos

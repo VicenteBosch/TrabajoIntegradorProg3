@@ -29,7 +29,7 @@ function Header(props){
             <img className= "logo" src="/imgs/logo.png" alt="logo"/> 
 
             <ul className="main-nav">
-                {opciones.map((elemento)=> <Opcion data= {elemento}/>)}
+            {opciones.map((elemento , idx)=> <Opcion data= {elemento} key={idx + elemento.nombre}/>)}
             </ul>
             
         </nav>
