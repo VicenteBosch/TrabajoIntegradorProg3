@@ -12,7 +12,8 @@ class DetallesComponent extends Component {
 
 
     componentDidMount (){
-        fetch(`https://api.themoviedb.org/3/movie/${this.props.match.params.id}?api_key=0e2ea5762304016279ec676c08bd2b6d`)
+        const { id } = this.props;
+        fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0e2ea5762304016279ec676c08bd2b6d`)
         .then(res => res.json())
         //  .then(data => console.log(data)) 
          .then(data => this.setState({data: data}) )

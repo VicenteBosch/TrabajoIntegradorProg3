@@ -1,5 +1,5 @@
 import React from "react"
-import {Switch, Route} from 'react-router-dom'
+import { Switch, Route } from 'react-router-dom'
 import { BrowserRouter as Router } from 'react-router-dom';
 
 import Header from './components/Header'
@@ -13,25 +13,19 @@ import Detalles from './screens/Detalles';
 import ResultadosBusqueda from "./screens/ResultadosBusqueda"
 
 function App() {
- 
   return (
-    
-      <Router>
-
-        <Header />
-
-        <Switch>
-          <Route path="/" exact={true} component={Home}/>
-          <Route path="/favoritos"  component={Favoritos}/>
-          <Route path="/populares"  component={Populares}/>
-          <Route path="/estrenos"  component={Estrenos}/>
-          <Route path="/detalles/id/:id" component={Detalles}/>
-          <Route path="/results"  component={ResultadosBusqueda}/>
-        </Switch>
-
-        <Footer />
-        
-      </Router>
+    <Router>
+      <Header />
+      <Switch>
+        <Route path="/" exact={true} component={Home} />
+        <Route path="/favoritos" component={Favoritos} />
+        <Route path="/populares" component={Populares} />
+        <Route path="/estrenos" component={Estrenos} />
+        <Route path="/detalle/pelicula/:id" component={Detalles} />
+        <Route path="/results" component={ResultadosBusqueda} />
+      </Switch>
+      <Footer />
+    </Router>
   );
 }
 
