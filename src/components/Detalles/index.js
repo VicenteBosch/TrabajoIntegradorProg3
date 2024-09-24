@@ -33,10 +33,10 @@ class DetallesComponent extends Component {
 
 
                 <div className="DetalleInfo">
-                <p>Rating: {data.popularity}</p>
-                <p>Estreno: {data.release_date}</p>
-                <p>Duracion: {data.runtime}</p>
-                <p>Sinopsis: {data.overview}</p>
+                <p>Descripcion: {data.overview}</p>
+                <p>Rating: {data.vote_average}</p>
+                <p>Fecha de estreno: {data.release_date}</p>
+                <p>Genero: {data.genre_ids}</p>
                 
                 </div>
                 </div>

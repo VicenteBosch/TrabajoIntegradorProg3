@@ -41,7 +41,7 @@ class Buscador extends Component {
             />
             <button>Buscar</button>
        
-            <i class="fas fa-search search-icon"></i>
+            <i className="fas fa-search search-icon"></i>
           
           </form>
           </div>
