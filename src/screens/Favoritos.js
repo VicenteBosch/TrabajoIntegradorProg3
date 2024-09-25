@@ -29,6 +29,8 @@ class Favoritos extends Component {
     render(){
         return(
             <div>
+                
+                <h1>Estos son los favoritos</h1>
             {
                 this.state.peliculasFavoritas.length > 0 ?
                     this.state.peliculasFavoritas.map(elm => <h1>{elm.title}</h1>)

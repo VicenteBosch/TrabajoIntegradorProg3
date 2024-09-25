@@ -11,6 +11,7 @@ import Estrenos from './screens/Estrenos';
 import Favoritos from './screens/Favoritos';
 import Detalles from './screens/Detalles';
 import ResultadosBusqueda from "./screens/ResultadosBusqueda"
+import NotFound from "./screens/NotFound"
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
         <Route path="/estrenos" component={Estrenos} />
         <Route path="/detalle/pelicula/:id" component={Detalles} />
         <Route path="/results" component={ResultadosBusqueda} />
+        <Route path='' component = {NotFound}/>
       </Switch>
       <Footer />
     </Router>

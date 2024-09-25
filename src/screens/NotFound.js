@@ -1,22 +1,14 @@
-import React from 'react';
-import { Component} from 'react';
+import React from "react";
+import NotFound from "../components/NotFound"
 
 
-class NotFound extends Component {
-    constructor (props){
-        super(props);
-        this.state = { 
+function NotFoundScreen() {
 
-        }
-    }
-    
-    render(){
-        return(
-            <div>
-         <h2>NotFound</h2>
-            </div>
-        )
-    }
+    return (
+        <div>
+            <NotFound/>
+        </div>
+    );
 }
 
-export default NotFound
+export default NotFoundScreen;

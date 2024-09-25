@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 
 import Movie from "../Movie/index"
-
+import { Link } from 'react-router-dom';
 class Populares extends Component {
 
 
@@ -11,7 +11,9 @@ class Populares extends Component {
         this.state = {
             peliculas: [],
             paginaCargar: 2
+            
         }
+ 
 
     }
 
@@ -47,6 +49,10 @@ class Populares extends Component {
                 <button onClick={() => this.cargarMas()}>
                     Cargar mas
                 </button>
+                <Link to={"/populares"} >
+                    <button className='detalle-link'>Ver todas</button>
+                </Link>
+                
             </div>)
     }
 

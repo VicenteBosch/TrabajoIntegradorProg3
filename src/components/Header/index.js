@@ -1,37 +1,50 @@
 import React from "react";
+import { Link } from 'react-router-dom';
+
+
 import Opcion from "../Opcion";
 import './style.css'
 
 
 const opciones = [
     {
-        nombre:"Home",
+        nombre: "Home",
         ruta: '/'
-    }, 
+    },
     {
         nombre: "Favoritos",
         ruta: "/favoritos"
     },
     {
         nombre: "Populares",
-        ruta:"/populares"
+        ruta: "/populares"
     },
     {
         nombre: "Estrenos",
-        ruta:"/estrenos"
+        ruta: "/estrenos"
     }
 ]
 
-function Header(props){
-    return(
+function Header(props) {
+    return (
         <nav>
-            
-            <img className= "logo" src="/imgs/logo.png" alt="logo"/> 
+
+       
+
+            <Link to={`/`}>
+                <img
+                    className="logo"
+                    src={"/imgs/logo.png"}
+                    alt={"logo"}
+                />
+            </Link>
+
+
 
             <ul className="main-nav">
-            {opciones.map((elemento , idx)=> <Opcion data= {elemento} key={idx + elemento.nombre}/>)}
+                {opciones.map((elemento, idx) => <Opcion data={elemento} key={idx + elemento.nombre} />)}
             </ul>
-            
+
         </nav>
     )
 }

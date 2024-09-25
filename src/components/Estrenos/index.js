@@ -1,12 +1,12 @@
 import React, { Component } from "react";
 import Movie from "../Movie/index"
-
-const api_key =  "0e2ea5762304016279ec676c08bd2b6d";
+import { Link } from 'react-router-dom';
+const api_key = "0e2ea5762304016279ec676c08bd2b6d";
 
 
 class Estrenos extends Component {
 
-    
+
     constructor() {
 
         super()
@@ -34,20 +34,25 @@ class Estrenos extends Component {
                 paginaCargar: this.state.paginaCargar + 1
             }))
             .catch(error => console.log(error))
-    }
+    }   
 
     render() {
-        
-        const primerasCinco = this.state.peliculas.length !== 0 ?  this.state.peliculas.slice(0, 5) : [];
+
+        const primerasCinco = this.state.peliculas.length !== 0 ? this.state.peliculas.slice(0, 5) : [];
 
         return (
             <div>
                 {
-primerasCinco.map((elm, idx) =>  <Movie data={elm} key={elm + idx}/>)
+                    primerasCinco.map((elm, idx) => <Movie data={elm} key={elm + idx} />)
                 }
                 <button onClick={() => this.cargarMas()}>
                     Cargar mas
                 </button>
+
+                <Link to={"/estrenos"} >
+                    <button className='detalle-link'>Ver todas</button>
+                </Link>
+
             </div>)
     }
 

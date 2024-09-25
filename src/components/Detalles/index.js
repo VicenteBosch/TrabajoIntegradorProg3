@@ -29,17 +29,18 @@ class DetallesComponent extends Component {
             <div className="PadreDetallePelicula">
                 {data == null ? <h1>Cargando</h1> : <div> <div className="DetallePoster">
                 <img src={`https://image.tmdb.org/t/p/w500/${data.poster_path}`} alt={data.original_title} />
-                <p>{data.original_title}</p>
+                <h2>{data.original_title}</h2>
                 </div>
 
 
                 <div className="DetalleInfo">
-                <p>Descripcion: {data.overview}</p>
-                <p>Rating: {data.vote_average}</p>
+                <p> {data.overview}</p>
+                <p>Calificación: {data.vote_average}</p>
                 <p>Fecha de estreno: {data.release_date}</p>
-                <p>Genero: {data.genre_ids}</p>
-                
+                <div className="Generos">Generos: {data.genres.map((elm, idx) => <p>{elm.name}</p>)} </div>
+                <p>(Aca va la posibilidad de agragar a favoritos la pelicula)</p>
                 </div>
+             
                 </div>
                  }
                
