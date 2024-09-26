@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component} from 'react';
+import Movie from '../components/Movie/index';
 
 
 class Favoritos extends Component {
@@ -11,7 +12,7 @@ class Favoritos extends Component {
     }
 
     componentDidMount(){
-        let storage = localStorage.getItem("categoriasFavoritos")
+        let storage = localStorage.getItem("favoritos")
         if(storage !== null){
             let storageParseado = JSON.parse(storage)
 
@@ -26,16 +27,22 @@ class Favoritos extends Component {
         }
     }
     
+    actualizarFavoritos (arrayStorage){
+        this.setState({favoritos: arrayStorage})
+    }
+
     render(){
         return(
+
             <div>
-                
-                <h1>Estos son los favoritos</h1>
+
+                <h1>Peliculas Favoritas:</h1>
             {
                 this.state.peliculasFavoritas.length > 0 ?
-                    this.state.peliculasFavoritas.map(elm => <h1>{elm.title}</h1>)
-                    : <h1>No hay peliculas Favoritas</h1>
+                this.state.peliculasFavoritas.map((elm,idx) =>  <Movie actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  esFavorito={true} data= {elm} key= {`${idx}-${elm.name}`}/>)
+                : <h1>No hay peliculas Favoritas</h1>
             }
+
             </div>
         )
     }

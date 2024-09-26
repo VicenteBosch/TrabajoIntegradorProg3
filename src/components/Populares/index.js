@@ -1,7 +1,7 @@
 import React, { Component } from "react";
-
 import Movie from "../Movie/index"
 import { Link } from 'react-router-dom';
+
 class Populares extends Component {
 
 

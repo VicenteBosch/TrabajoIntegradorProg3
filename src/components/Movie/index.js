@@ -4,7 +4,6 @@ import "./style.css"
 
 class Movie extends Component {
 
-
     constructor(props) {
         super(props);
         this.state = {
@@ -19,6 +18,35 @@ class Movie extends Component {
     OcultarDescripcion() {
         this.setState({ VerMas: 0 })
     }
+
+    agregarFavoritos(idPelicula){
+        let storage = localStorage.getItem("favoritos")
+
+        if (storage !== null){
+            let storageParseado = JSON.parse(storage)
+            storageParseado.push(idPelicula)
+            this.props.actualizarFavoritos(storageParseado)
+            let storageString = JSON.stringify(storageParseado)
+            localStorage.getItem("favoritos" , storageString)
+        }
+
+        else {
+            let agregarArray = [idPelicula]
+            this.props.actualizarFavoritos(agregarArray)
+            let arrayStringificado = JSON.stringify(agregarArray)
+            localStorage.setItem("favoritos" , arrayStringificado)
+        }
+    }
+
+    quitarFavoritos(idPelicula){
+        let storage = localStorage.getItem("favoritos")
+        let storageParseado = JSON.parse(storage)
+        let storageFiltrado = storageParseado.filter((elm) => elm !== idPelicula)
+        this.props.actualizarFavoritos(storageFiltrado)
+        let storageString = JSON.stringify(storageFiltrado)
+        localStorage.setItem("favoritos" , storageString)
+    }
+
 
     render() {
         return (
@@ -41,6 +69,9 @@ class Movie extends Component {
                     <p></p>}
 
                 <h5 className="detalle-link"> <Link to={`/detalle/pelicula/${this.props.data.id}`}>Ir a detalle</Link></h5>
+
+                {this.props.esFavorito === true ? <button onClick={() => this.quitarFavoritos(this.props.data.id)}>Quitar de Favoritos</button> : 
+                <button onClick={() => this.agregarFavoritos(this.props.data.id)}>Agregar a Favoritos</button>}
 
 
             </article>
