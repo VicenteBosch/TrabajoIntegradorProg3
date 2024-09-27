@@ -23,7 +23,7 @@ class DetallesComponent extends Component {
     render() {
         const { data } = this.state;
         if (!data) {
-            return <p>Cargando...</p>;
+            return <p className="cargando">Cargando...</p>;
         }
         return (
             <div className="PadreDetallePelicula">
