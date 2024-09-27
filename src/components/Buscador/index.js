@@ -13,7 +13,7 @@ class Buscador extends Component {
 
       detenerDefault(evento) {
         evento.preventDefault();
-        this.props.history.push('/results' , {valorInput: this.state.valorInput})
+        this.props.history.push('/results/'+this.state.valorInput)
       }
     
       guardarInput(evento) {

@@ -8,20 +8,24 @@ class VerTodasPopulares extends Component {
         super(props)
         this.state = {
             peliculas: [],
-            backuppeliculas: [],
-            paginaACargar: 1
+            backup: [],
+            page: 1,
+            favoritos: localStorage.getItem('favoritos') !== null? localStorage.getItem('favoritos') : []
         }
     }
 
     componentDidMount() {
-        fetch("https://api.themoviedb.org/3/movie/popular?api_key=0e2ea5762304016279ec676c08bd2b6d")
+        fetch("https://api.themoviedb.org/3/movie/popular?api_key=0e2ea5762304016279ec676c08bd2b6d&page=1")
             .then(res => res.json())
-            .then((data) => {
-                setTimeout(() => this.setState({
+            .then((data) => 
+                
+                {
+                 this.setState({
                 peliculas: data.results,
-                backuppeliculas: data.results
-                }), 3000)
-            })
+                backup: data.results
+                })
+            }
+        )
             .catch(error => console.log(error))
     }
 
@@ -47,20 +51,19 @@ class VerTodasPopulares extends Component {
             })
       } 
       render() {
-        if (this.state.peliculas.length == 0) {
-            return <p>Cargando...</p>;
-        };
-
+        
+        console.log(this.state.peliculas)
         return(
+            
             <div className="Buscar">
                 {console.log(this.state.peliculas)}
                 <div>
                 <Filtro filtrarPeliculas = {(valorInput) => this.filtrarPeliculas(valorInput)}/>
                 </div>
                 
-                {this.state.peliculas == null ? <h1>Cargando..</h1> : <div className='PadreVerTodas'>
+                {this.state.peliculas.length === 0? <h1>Cargando..</h1> : <div className='PadreVerTodas'>
                 {
-                    this.state.peliculas.map(( elm, idx) => <CardPelicula actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  esFavorito={this.state.favoritos.includes(elm.id)} data= {elm}  key={idx + elm.title}/>)
+                    this.state.peliculas.map(( elm, idx) => <Movie actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  esFavorito={this.state.favoritos.includes(elm.id)} data= {elm}  key={idx + elm.title}/>)
                     
                 }
                 

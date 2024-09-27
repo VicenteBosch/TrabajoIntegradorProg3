@@ -1,6 +1,6 @@
 import React from 'react';
 import { Component} from 'react';
-
+import VerTodasPopulares from '../components/VerTodasPopulares';
 
 class Populares extends Component {
     constructor (props){
@@ -13,7 +13,7 @@ class Populares extends Component {
     render(){
         return(
             <div>
-         <h2>Populares</h2>
+         <VerTodasPopulares/>
             </div>
         )
     }
