@@ -27,7 +27,7 @@ class Movie extends Component {
             storageParseado.push(idPelicula)
             this.props.actualizarFavoritos(storageParseado)
             let storageString = JSON.stringify(storageParseado)
-            localStorage.getItem("favoritos" , storageString)
+            localStorage.setItem("favoritos" , storageString)
         }
 
         else {

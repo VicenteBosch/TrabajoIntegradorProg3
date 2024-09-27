@@ -7,12 +7,13 @@ class Favoritos extends Component {
     constructor (props){
         super(props);
         this.state = { 
-            peliculasFavoritas: []
+            peliculasFavoritas: [],
+            favoritos: localStorage.getItem('favoritos') !== null? localStorage.getItem('favoritos') : []
         }
     }
 
     componentDidMount(){
-        let storage = localStorage.getItem("favoritos")
+        let storage = this.state.favoritos
         if(storage !== null){
             let storageParseado = JSON.parse(storage)
 
@@ -22,8 +23,8 @@ class Favoritos extends Component {
                     .then(res => res.json())
                 )
             )
-            .then(data => this.setState({peliculasFavoritas: data}))
-            
+            .then(data => this.setState({peliculasFavoritas: this.state.peliculasFavoritas.concat(data)}))
+            .catch(e => console.log(e))
         }
     }
     
@@ -39,7 +40,7 @@ class Favoritos extends Component {
                 <h1>Peliculas Favoritas:</h1>
             {
                 this.state.peliculasFavoritas.length > 0 ?
-                this.state.peliculasFavoritas.map((elm,idx) =>  <Movie actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  esFavorito={true} data= {elm} key= {`${idx}-${elm.name}`}/>)
+                this.state.peliculasFavoritas.map((elm,idx) =>  <Movie  actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  esFavorito={true} data= {elm} key= {`${idx}-${elm.name}`}/>)
                 : <h1>No hay peliculas Favoritas</h1>
             }
 
