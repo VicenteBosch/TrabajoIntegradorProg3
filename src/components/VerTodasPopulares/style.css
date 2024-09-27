@@ -1,0 +1,38 @@
+
+.PadreVerTodas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between; 
+    gap: 20px;
+    padding: 20px; 
+  }
+  
+  
+  .card-pelicula:hover {
+    transform: scale(1.05); 
+  }
+  
+  
+  .cardimg {
+    width: 100%; 
+    height: auto; 
+    border-radius: 8px; 
+  }
+  
+  
+  .card-pelicula button {
+    margin-top: 10px; 
+    padding: 10px 15px; 
+    background-color: #007bff; 
+    color: white; 
+    border: none; 
+    border-radius: 4px; 
+    cursor: pointer; 
+    transition: background-color 0.3s ease; 
+  }
+  
+  
+  .card-pelicula button:hover {
+    background-color: #0056b3; 
+  }
+  

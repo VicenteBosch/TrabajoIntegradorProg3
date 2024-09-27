@@ -1,5 +1,6 @@
 import React from 'react';
 import { Component} from 'react';
+import VerTodasEstrenos from '../components/VerTodasEstrenos';
 
 
 class Estrenos extends Component {
@@ -13,7 +14,7 @@ class Estrenos extends Component {
     render(){
         return(
             <div>
-                <p>Estrenos</p>
+         <VerTodasEstrenos/>
             </div>
         )
     }

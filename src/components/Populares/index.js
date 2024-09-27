@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Movie from "../Movie/index"
 import { Link } from 'react-router-dom';
+import "./style.css"
 
 class Populares extends Component {
 
@@ -55,13 +56,15 @@ class Populares extends Component {
                     this.state.peliculas.map((elm, idx) => <Movie actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)} esFavorito={this.state.favoritos.includes(elm.id)} data={elm} key={elm + idx} />)
 
                 }
-                <button onClick={() => this.cargarMas()}>
-                    Cargar mas
-                </button>
-                <Link to={"/populares"} >
-                    <button className='detalle-link'>Ver todas</button>
-                </Link>
-                
+                <div className="button-container">
+                    <button className="cargar-mas-button"onClick={() => this.cargarMas()}>
+                        Cargar mas
+                    </button>
+
+                    <Link to={"/populares"} >
+                        <button className='ver-todas-button'>Ver todas</button>
+                    </Link>
+                </div>
             </div>)
     }
 

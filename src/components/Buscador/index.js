@@ -1,6 +1,7 @@
 import React, {Component} from "react"
 import "./style.css"
 
+
 class Buscador extends Component {
     constructor(props) {
         super(props);
@@ -40,7 +41,7 @@ class Buscador extends Component {
             />
             <button>Buscar</button>
        
-            <i className="fas fa-search search-icon"></i>
+            
           
           </form>
           </div>

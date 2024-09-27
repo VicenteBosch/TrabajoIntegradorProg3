@@ -1,0 +1,21 @@
+.cargar-mas-button,
+.ver-todas-button {
+    padding: 10px 20px; 
+    margin: 20px auto;
+    border: none;
+    border-radius: 5px; 
+    background-color: rgb(61, 59, 50); 
+    color: #fff; 
+    font-size: 1rem; 
+    cursor: pointer; 
+    transition: background-color 0.3s, transform 0.2s; 
+    display: block; 
+    width: 200px; 
+    text-align: center; 
+}
+
+.cargar-mas-button:hover,
+.ver-todas-button:hover {
+    background-color: rgb(80, 78, 68); 
+    transform: scale(1.05); 
+}

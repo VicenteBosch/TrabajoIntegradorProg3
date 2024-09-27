@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import Movie from "../Movie/index";
 import Filtro from "../Filtro";
-
+import "./style.css"
 
 class VerTodasPopulares extends Component {
     constructor(props) {
@@ -56,12 +56,14 @@ class VerTodasPopulares extends Component {
         return(
             
             <div className="Buscar">
-                {console.log(this.state.peliculas)}
                 <div>
-                <Filtro filtrarPeliculas = {(valorInput) => this.filtrarPeliculas(valorInput)}/>
+                    <Filtro filtrarPeliculas = {(valorInput) => this.filtrarPeliculas(valorInput)}/>
                 </div>
                 
-                {this.state.peliculas.length === 0? <h1>Cargando..</h1> : <div className='PadreVerTodas'>
+                {this.state.peliculas.length === 0? 
+                    <h1>Cargando..</h1> 
+                 : 
+                    <div className='PadreVerTodas'>
                 {
                     this.state.peliculas.map(( elm, idx) => <Movie actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  esFavorito={this.state.favoritos.includes(elm.id)} data= {elm}  key={idx + elm.title}/>)
                     

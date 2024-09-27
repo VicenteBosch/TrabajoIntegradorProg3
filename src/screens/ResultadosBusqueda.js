@@ -30,25 +30,24 @@ class ResultadoBusqueda extends Component {
         return (
             
             <div>
-                {this.state.resultados.length > 0 ?
-
-
-                    this.state.resultados.map((data, index) => (
+            {this.state.resultados.length > 0 ? (
+                // Aquí agregamos la clase "PadreVerTodas"
+                <div className="PadreVerTodas">
+                    {this.state.resultados.map((data, index) => (
                         <Movie
                             key={index}
                             data={data}
-                            actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}  
+                            actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)}
                             esFavorito={this.state.favoritos.includes(data.id)}
                         />
-                    ))
-
-
-                    :
-                    <p>No se han encontrado resultados, intanta con otra cosa!</p>
-                }
-            </div>
-        )
-    }
+                    ))}
+                </div>
+            ) : (
+                <p>No se han encontrado resultados, intenta con otra cosa!</p>
+            )}
+        </div>
+    )
+}
 }
 
-export default ResultadoBusqueda
+export default ResultadoBusqueda;
