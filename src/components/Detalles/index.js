@@ -6,6 +6,7 @@ class DetallesComponent extends Component {
         super(props);
         this.state = { 
             data:null,
+            favoritos: []
 
         }
     }
@@ -19,6 +20,32 @@ class DetallesComponent extends Component {
          .then(data => this.setState({data: data}) )
         .catch(e => console.log(e))
     }
+
+    agregarFavoritos(idPelicula) {
+        let storage = localStorage.getItem("favoritos");
+        if (storage !== null) {
+            let storageParseado = JSON.parse(storage);
+            storageParseado.push(idPelicula);
+            this.props.actualizarFavoritos(storageParseado);
+            let storageString = JSON.stringify(storageParseado);
+            localStorage.setItem("favoritos", storageString);
+        } else {
+            let agregarArray = [idPelicula];
+            this.props.actualizarFavoritos(agregarArray);
+            let arrayStringificado = JSON.stringify(agregarArray);
+            localStorage.setItem("favoritos", arrayStringificado);
+        }
+    }
+
+    quitarFavoritos(idPelicula) {
+        let storage = localStorage.getItem("favoritos");
+        let storageParseado = JSON.parse(storage);
+        let storageFiltrado = storageParseado.filter((elm) => elm !== idPelicula);
+        this.props.actualizarFavoritos(storageFiltrado);
+        let storageString = JSON.stringify(storageFiltrado);
+        localStorage.setItem("favoritos", storageString);
+    }
+
     
     render() {
         const { data } = this.state;
@@ -38,7 +65,12 @@ class DetallesComponent extends Component {
                 <p>Calificación: {data.vote_average}</p>
                 <p>Fecha de estreno: {data.release_date}</p>
                 <div className="Generos">Generos: {data.genres.map((elm, idx) => <p>{elm.name}</p>)} </div>
-                <p>(Aca va la posibilidad de agragar a favoritos la pelicula)</p>
+                <div className="button-container">
+                    {this.props.esFavorito === true ?
+                        <button className="favoritos-button" onClick={() => this.quitarFavoritos(this.props.data.id)}>Quitar de Favoritos</button> :
+                        <button className="favoritos-button" onClick={() => this.agregarFavoritos(this.props.data.id)}>Agregar a Favoritos</button>
+                    }
+                </div>
                 </div>
              
                 </div>
