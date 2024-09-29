@@ -2,7 +2,6 @@ import React from 'react';
 import { Component} from 'react';
 import Movie from '../components/Movie/index';
 
-
 class Favoritos extends Component {
     constructor (props){
         super(props);

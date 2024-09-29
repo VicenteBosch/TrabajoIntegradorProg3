@@ -3,18 +3,22 @@
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    margin-top: 50px; 
+    margin-bottom: 50px;
 }
 
 .DetallePoster {
     text-align: center;
     color: grey;
+    margin-bottom: 30px;
 }
 
 .DetallePoster img {
-    max-width: 100%;
+    max-width: 230px;
     height: auto;
     border-radius: 10px;
     margin-bottom: 20px;
+
 }
 
 .DetalleInfo {
@@ -25,6 +29,10 @@
     width: 80%;
     max-width: 600px;
     text-align: left;
+    width: 100%; 
+    max-width: 650; 
+    margin-bottom: 30px;
+   
 }
 
 .DetalleInfo p {
@@ -45,13 +53,12 @@
 
 button {
     padding: 8px 16px;
-    background-color: grey;
+    background-color: #007bff;
     color: #fff;
     border: none;
     border-radius: 5px;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 10px;
 }
 
 .cargando {
@@ -61,4 +68,21 @@ button {
     font-family: 'Arial', sans-serif;
     margin-top: 10%;
     animation: blink 1.5s ease-in-out infinite;
+    margin-top: 10%;
+}
+
+
+.DetallePoster h2 {
+    font-size: 2rem; 
+    font-weight: bold; 
+    color: #333; 
+    margin: 20px 0; 
+    text-align: center; 
+    text-transform: uppercase; 
+    letter-spacing: 1px; 
+    border-bottom: 2px solid rgba(61, 59, 50, 0.3); 
+    padding-bottom: 10px; 
+    background-color: rgba(240, 240, 240, 0.9); 
+    border-radius: 10px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }

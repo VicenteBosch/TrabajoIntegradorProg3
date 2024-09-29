@@ -7,8 +7,16 @@ nav {
 }
 
 .logo {
-    height: 70px; 
-    width: auto; 
+    height: 120px; 
+    margin-right: 15px;
+}
+
+
+.header-title {
+    font-size: 1.8rem; 
+    font-weight: bold; 
+    color: #f9f9f9; 
+    margin-right: 470px; 
 }
 
 .main-nav {

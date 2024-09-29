@@ -24,8 +24,7 @@ class Populares extends Component {
         fetch("https://api.themoviedb.org/3/movie/popular?api_key=0e2ea5762304016279ec676c08bd2b6d")
             .then(res => res.json())
             .then(data => 
-                 this.setState({ peliculas: data.results, peliculasBackup: data.results })
-                )
+                 this.setState({ peliculas: data.results, peliculasBackup: data.results }))
             .catch(error => console.log(error))
     }
 
@@ -51,7 +50,7 @@ class Populares extends Component {
 
         return (
             <div>
-                {this.state.paginaCargar==1 ?
+                {this.state.paginaCargar === 1 ?
                     primerasCinco.map((elm, idx) => <Movie actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)} esFavorito={this.state.favoritos.includes(elm.id)} data={elm} key={elm + idx} />):
                     this.state.peliculas.map((elm, idx) => <Movie actualizarFavoritos={(arr) => this.actualizarFavoritos(arr)} esFavorito={this.state.favoritos.includes(elm.id)} data={elm} key={elm + idx} />)
 

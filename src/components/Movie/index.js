@@ -67,15 +67,14 @@ class Movie extends Component {
                     }
                 </div>
 
-                <h5 className="detalle-link">
-                    <Link to={`/detalle/pelicula/${this.props.data.id}`}>Ir a detalle</Link>
-                </h5>
-
                 <div className="button-container">
                     {this.props.esFavorito === true ?
                         <button className="favoritos-button" onClick={() => this.quitarFavoritos(this.props.data.id)}>Quitar de Favoritos</button> :
                         <button className="favoritos-button" onClick={() => this.agregarFavoritos(this.props.data.id)}>Agregar a Favoritos</button>
                     }
+                    <h5 className="detalle-link">
+                        <Link to={`/detalle/pelicula/${this.props.data.id}`}>Ir a detalle</Link>
+                    </h5>
                 </div>
             </article>
         );
