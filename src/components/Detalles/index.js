@@ -6,7 +6,7 @@ class DetallesComponent extends Component {
         super(props);
         this.state = { 
             data: null,
-            esFavorito: false // Estado para controlar si es favorito
+            esFavorito: false 
         };
     }
 
@@ -15,7 +15,7 @@ class DetallesComponent extends Component {
         fetch(`https://api.themoviedb.org/3/movie/${id}?api_key=0e2ea5762304016279ec676c08bd2b6d`)
             .then(res => res.json())
             .then(data => {
-                this.setState({ data: data, esFavorito: this.props.esFavorito }); // Establece el estado inicial de esFavorito
+                this.setState({ data: data, esFavorito: this.props.esFavorito }); 
             })
             .catch(e => console.log(e));
     }
@@ -24,11 +24,11 @@ class DetallesComponent extends Component {
         let storage = localStorage.getItem("favoritos");
         let storageParseado = storage ? JSON.parse(storage) : [];
 
-        if (!storageParseado.includes(idPelicula)) { // Solo agrega si no está ya en favoritos
+        if (!storageParseado.includes(idPelicula)) { 
             storageParseado.push(idPelicula);
             this.props.actualizarFavoritos(storageParseado);
             localStorage.setItem("favoritos", JSON.stringify(storageParseado));
-            this.setState({ esFavorito: true }); // Actualiza el estado a verdadero
+            this.setState({ esFavorito: true }); 
         }
     }
 
@@ -38,7 +38,7 @@ class DetallesComponent extends Component {
         let storageFiltrado = storageParseado.filter((elm) => elm !== idPelicula);
         this.props.actualizarFavoritos(storageFiltrado);
         localStorage.setItem("favoritos", JSON.stringify(storageFiltrado));
-        this.setState({ esFavorito: false }); // Actualiza el estado a falso
+        this.setState({ esFavorito: false }); 
     }
 
     render() {
