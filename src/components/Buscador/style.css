@@ -60,4 +60,14 @@
   .search-icon:hover {
     color: #0056b3; 
   }
-  
+  @media screen and (max-width:450px){
+    .search-input {
+        width: 60%;
+        height: 25px;
+    }
+
+    .button {
+        width: 20%;
+        height: 25px;
+    }
+}

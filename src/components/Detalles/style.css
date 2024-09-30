@@ -86,3 +86,21 @@ button {
     border-radius: 10px; 
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
+
+@media screen and (max-width: 450px) {
+    .PadreDetallePelicula {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+
+    .DetallePoster img {
+        max-width: 150px;
+        margin-bottom: 10px;
+    }
+
+    .DetalleInfo {
+        padding: 10px;
+        width: 90%;
+        max-width: 300px;
+    }
+}

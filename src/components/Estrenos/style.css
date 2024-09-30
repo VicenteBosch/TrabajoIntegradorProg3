@@ -19,3 +19,13 @@
     background-color: rgb(80, 78, 68); 
     transform: scale(1.05); 
 }
+@media screen and (max-width: 450px) {
+    .cargar-mas-button,
+    .ver-todas-button {
+        padding: 8px 16px;
+        font-size: 10px;
+        width: 150px;
+    }
+
+   
+}

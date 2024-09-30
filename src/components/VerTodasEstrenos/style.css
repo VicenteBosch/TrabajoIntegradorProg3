@@ -34,3 +34,24 @@
   transform: scale(1.05); 
 }
 
+@media screen and (max-width: 450px) {
+  .button-container {
+      flex-direction: column;
+      margin-top: 10px;
+  }
+
+  .Buscar {
+      padding: 10px;
+  }
+
+  .PadreVerTodas {
+      flex-direction: column;
+      width: 100%;
+  }
+
+  .card-pelicula {
+      width: 100%;
+      margin: 10px auto;
+      padding: 10px;
+  }
+}

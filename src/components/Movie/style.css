@@ -106,3 +106,45 @@
     color: rgb(61, 59, 50);
     text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.4);
 }
+
+@media screen and (max-width: 450px) {
+    .card-pelicula {
+        max-width: 180px;
+        padding: 10px;
+        margin: 15px auto;
+    }
+
+    .cardimg {
+        max-height: 180px;
+        border-radius: 8px;
+    }
+
+    .card-pelicula h2 {
+        font-size: 10px;
+        margin: 8px 0;
+    }
+
+    .card-pelicula p {
+        font-size: 10px;
+        margin: 6px 0;
+    }
+
+    .card-pelicula button {
+        padding: 8px 16px;
+        font-size: 10px;
+    }
+
+    .populares, .estrenos {
+        font-size: 15px;
+        padding: 8px 0;
+        margin: 20px 0;
+    }
+
+    .PadreSecciones div {
+        flex-direction: column;
+    }
+
+    .button-container {
+        margin-top: 10px;
+    }
+}
